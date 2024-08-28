@@ -20,21 +20,22 @@ D:\nasm\ndisasm.exe -f bin -o D:\Nostalgia\bootloader.bin D:\Nostalgia\bootloade
 ช่วยให้สามารถรัน OS หลายๆ ตัวใน VM บน Windows ได้
 
 - [QEMU](https://www.virtualbox.org/) 
-เป็นเครื่องมือที่มีประสิทธิภาพที่สามารถสร้างและจัดการ Disk Image ได้
-
-<br>.ใช้มันเพื่อสร้าง Disk Image ที่ VirtualBox สามารถใช้งานได้. [2]
-<br>cd /d D:\qemu 
-<br>qemu-img create -f raw D:\Nostalgia\disk.img 64M<br>
-<br>ตรวจสอบ Disk Image:[4]
-<br>qemu-img info D:\Nostalgia\disk.img
-
+เป็นเครื่องมือที่มีประสิทธิภาพที่สามารถสร้างและจัดการ Disk Image ได้ใช้มันเพื่อสร้าง Disk Image ที่ VirtualBox สามารถใช้งานได้. [2]
+cd /d D:\qemu 
+qemu-img create -f raw D:\Nostalgia\disk.img 64M<br>
+ตรวจสอบ Disk Image:[4]
+qemu-img info D:\Nostalgia\disk.img
 
 - [WSL](เปิด Command Prompt หรือ PowerShell ด้วยสิทธิ์ผู้ดูแลระบบ.)
- dd เป็นเครื่องมือที่ใช้ในการคัดลอกและแปลงข้อมูลบนระบบ Unix/Linux และสามารถใช้ในการจัดการ Disk Images ได้เช่นกัน. ต่อไปนี้คือวิธีการติดตั้งและใช้ dd บนระบบต่างๆ 
-wsl --install
-<br>cd /mnt/d/Nostalgia
-<br>เขียน Bootloader ลงใน Disk Image: [3]
-<br> dd if=bootloader.bin of=disk.img bs=512 seek=0 conv=notrunc
+ dd เป็นเครื่องมือที่ใช้ในการคัดลอกและแปลงข้อมูลบนระบบ Unix/Linux และสามารถใช้ในการจัดการ Disk Images ได้เช่นกัน. ต่อไปนี้คือวิธีการติดตั้งและใช้ dd บนระบบต่างๆ
+
+    wsl --install
+  
+    cd /mnt/d/Nostalgia
+  
+    เขียน Bootloader ลงใน Disk Image: [3]
+  
+    dd if=bootloader.bin of=disk.img bs=512 seek=0 conv=notrunc
 
 
 
