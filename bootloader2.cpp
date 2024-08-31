@@ -1,9 +1,6 @@
 extern "C" void bootloader_main() {
     char* video_memory = (char*)0xb8000; // Address for text mode video memory
-    const char* message = "Hello, this is a long message that will be displayed on the screen. "
-                          "It might be long enough to wrap around the screen if it doesn't fit "
-                          "in one line. This is a simple example of how to handle longer messages in "
-                          "a bootloader.";
+    const char* message = "Welcome to Nostalgia";
 
     int line_length = 80; // Number of characters per line
     int line_count = 25;  // Number of lines on the screen
